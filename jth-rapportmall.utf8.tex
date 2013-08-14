@@ -1,0 +1,88 @@
+% OBS DETTA ÄR INTE EN OFFICIELL RAPPORTMALL
+% OBS DETTA ÄR INTE EN OFFICIELL RAPPORTMALL
+% OBS DETTA ÄR INTE EN OFFICIELL RAPPORTMALL
+
+\input{settings.tex}
+%Innehåller vissa inställningar och hänvisningar till paket för att generera dokumentet
+
+\input{framsida.tex}
+% Innehåller framsidan och innehållsförteckning
+
+
+\section{Inleding}
+
+En inledning för rapporten. Har du fler funderingar om LaTeX kan du läsa detta dokument: \href{http://upload.wikimedia.org/wikipedia/commons/2/2d/LaTeX.pdf}{\nolinkurl{LaTeX}}.
+
+\section{Genomförande}
+Förklarande text för hur arbetet gick till för att nå fram till resultat. \\ en ny rad. Formler går aldeles.
+utmärt att köra i LaTeX.\\ 
+
+
+\begin{math}
+x_{1,2}=-\displaystyle\frac{p}{2}\pm\sqrt{\left(\displaystyle\frac{p}{2}\right)^2-q}
+\end{math}
+% Syntaxen som man skriver med kan vara lite svår att förstå till en början
+% det finns en massa verktyg på internet som kan hjälpa dig
+% http://www.sciweavers.org/free-online-latex-equation-editor
+
+
+ \\  \\
+KTH\footnote{Kungliga Tekniska Högskolan, är ett statligt svenskt universitet i Stockholm med huvudsaklig inriktning på teknik och naturvetenskap.} och Stockholms Universitet har en bra sida där man kan läsa hur man skriver formler \href{http://wiki.math.se/wikis/forberedandematte1/index.php/5.1_Skriva_matematiska_formler_i_LaTeX}{\nolinkurl{Här}}.
+\\ \\
+\newpage
+\section{Resultat}
+\subsection{\texttt{En valfri rubrik}}
+En text till vad du fick fram för resultat, refererar till en bok \cite{einstein}.
+Om man har haft en källa så är det väldigt viktigt att referera till källan \cite{einstein,latexcompanion}. Vi kan också inkludera bilder under texten.  Skulle bilden vara så omfattande så kan man hänvisa till en bilaga. Se \ref{tree:bilaga} för mer information.
+
+\begin{figure}[ht]
+    \centering
+    \vspace{2mm}
+    \scalebox{0.2}{\includegraphics{Figurer/forever-alone-guy.png}}
+	\caption{Helt ensam figur.}
+	\label{fig:label}
+\end{figure}
+
+\subsection{\texttt{En till valfri rubrik}}
+Tror du förstår nu, se \ref{hello:bilaga}.
+Att notera när du infogar kod kan du inte använda åäö 
+
+
+\lstset{tabsize=2,breaklines=true,numbers=left,basicstyle=\footnotesize,xleftmargin=30pt}
+\lstinputlisting[language=C,]{Kod/helloWorld.c}
+% Källkod i programspråket C inkluderas från filen helloWorld.c som ligger i mappen Kod. Läs  vilka språk som stöds http://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+
+\section{Diskussion}
+Diskusion om vad som kan ha gjorts bättre och annat bra som kan vara bra att tillägga till varför resultatet blev som det blev. \\ \\ 
+\begin{wrapfigure}{L}{45mm}
+\vspace{-10pt}
+  \begin{center}
+    \includegraphics[width=30mm]{Figurer/troll-face.png}
+  \end{center}
+  \vspace{-10pt}
+  \caption{Ett troll}
+  \vspace{-10pt}
+\end{wrapfigure}
+
+Detta är en text som syns vid sidan om en bild eller rättare sagt runt om en bild, när en bild syns brevid texten så kan bilden vara
+ett verktyg till att få läsaren att förstå bättre. Det kan vara en graf eller helt enkelt en bild 
+som beskriver ett flöde. Du kan bestämma avståndet mellan texten genom att ändra vspace. \\
+Du kan ändra positionen på bilden också, om den skall vara till höger eller vänster sida, bara att ändra bokstaven brevid {wrapfigure} till  R eller L. Storleken på bilden ändras med width. Brevid {wrapfigure}{L} har du också ett mått, som bestämmer hur stort området skall vara som texten skall undvika.
+\\ \\
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras non ligula leo. Fusce eget cursus enim. Donec erat velit, suscipit eget hendrerit at, aliquam eu orci. Sed a faucibus enim. Fusce posuere tincidunt urna a mollis. Sed sed velit ac nibh dictum rutrum. Nunc congue pulvinar sem vitae sollicitudin. Morbi varius vulputate augue, et scelerisque erat dictum quis
+
+\newpage
+\addcontentsline{toc}{section}{Referenser}
+\printbibliography
+
+
+\appendix
+\section{} \label{tree:bilaga}
+\includegraphics[angle=90,width=8.5 cm]{Bilagor/bilaga-eps-converted-to.pdf}\centering
+
+\section{} \label{hello:bilaga}
+\lstset{tabsize=2,breaklines=true,numbers=left,basicstyle=\footnotesize,xleftmargin=30pt}
+\lstinputlisting[language=C,]{Kod/helloWorld.c}
+% Källkod kan också vara bilaga Källkod, programspråket C inkluderas från filen helloWorld.c som ligger i mappen Kod. Läs  vilka språk som stöds http://en.wikibooks.org/wiki/LaTeX/Source_Code_Listings
+
+\end{document}

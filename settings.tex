@@ -1,0 +1,138 @@
+% OBS DETTA ÄR INTE EN OFFICIELL RAPPORTMALL
+% OBS DETTA ÄR INTE EN OFFICIELL RAPPORTMALL
+% OBS DETTA ÄR INTE EN OFFICIELL RAPPORTMALL
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+
+
+\usepackage[T1]{fontenc}
+% För riktiga å, ä och ö:
+
+% Den andra säger att vi ska använda fonter som är speciellt anpassade
+% för Västeuropeiska språk, bland annat kommer prickarna över "ö" lite
+% närmare o:et.
+% Det räcker ofta, men inte alltid, att bara ange den senare. Det bör
+% räcka att bara ange den första, men blir inte _fullt_ så snyggt.
+
+\usepackage[swedish]{babel}
+% Svensk avstavning (om den är installerad) och svenska rubriker på
+% sådant som LaTeX lägger till: sammanfattning,
+% innehållsförteckning...
+
+\usepackage{mathtools}
+% Paketet som tillåter en att skriva matematiska formler.
+
+\usepackage{ae}
+% När du gör PDF-filer för publicering på Internet eller för att
+% skicka via e-post, bör du använda Type1-fonter (typsnitt). LaTeX
+% använder vanligen bitmapfonter, som ger utmärkt resultat i skrivare,
+% men bedrövligt på skärm. Med ae får du fonter med samma utseende som
+% ordinarie LaTeX, men som också fungerar på bildskärmar. PDF-filer
+% skapar du sedan genom att skriva "dvipdf filnamn" efter att ha kört
+% LaTeX för att få fram en "filnamn.dvi".
+%    Det finns ingen garanti för att alla fonter du använder finns med
+% i ae, och de som inte finns kommer i regel få vanliga bitmapfonter
+% istället. Men det rör sig då om enstaka stycken - kanske
+% sammanfattningen du gjort med "abstract" till exempel - eller någon
+% enstaka variabel. Det mesta blir bra.
+
+
+\usepackage{listings}
+% tillåter att formatera kod
+
+\lstset{literate=%
+{Ö}{{\"O}}1
+{Ø}{{\O}}1
+{Ä}{{\"A}}1
+{Å}{{\AA}}1
+{Ü}{{\"U}}1
+{ß}{{\ss}}2
+{ü}{{\"u}}1
+{ä}{{\"a}}1
+{å}{{\aa}}1
+{ö}{{\"o}}1
+{ø}{{\o}}1
+{æ}{{\ae}}1
+{Æ}{{\AE}}1
+}
+% Fixar så att åäö och andra tecken går att använda i kodfiler 
+
+\renewcommand\appendix{\par
+  \setcounter{section}{0}
+  \setcounter{subsection}{0}
+  \setcounter{figure}{0}
+  \setcounter{table}{0}
+  \renewcommand\thesection{Bilaga \Alph{section}}
+  \renewcommand\thefigure{\Alph{section}\arabic{figure}}
+}
+%Lägger till rubriker för Bilagorna
+
+\usepackage{units}
+% Enheter ska skrivas i upprätt stil med seriffer, och separeras från
+% föregående siffror med ett tunt mellanslag - tunnare än ett
+% vanligt. Använd i texten/matteläget som: \unit[1,34]{m}
+
+\usepackage{icomma}
+% I icke-engelsk skrift används decimalkomma, i engelsk är kommatecken
+% i matteläge enbart en koordinatavskiljare. Därför sätter LaTeX i
+% vanliga fall automatiskt in ett extra mellanslag efter alla
+% kommatecken i matteläge. Detta kommando ger ett intelligent
+% kommatecken som förstår om det är decimalavskiljare eller
+% koordinatavskiljare, beroende på om det står något mellanslag
+% efter. Använd aldrig decimalpunkt i icke-engelsk skrift.
+
+\usepackage{color}
+\usepackage{graphics}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+
+% Dessa behövs när man inkluderar figurer från xfig, i
+% latex+postscript format (brukar bli snyggast). Använder man vanliga
+% eps-figurer behöver man inte color-paketet. Det finns både paketet
+% "graphics" och "graphicx", med något olika syntax. Om alla bilder
+% har rätt storlek när man importerar dem behöver man inte bry sig om
+% skillnaderna. wrapfig tillåter en att skriva text runt en figur.
+
+\usepackage{hyperref}
+
+\usepackage{bbm}
+\newcommand{\N}{\ensuremath{\mathbbm{N}}}
+\newcommand{\Z}{\ensuremath{\mathbbm{Z}}}
+\newcommand{\Q}{\ensuremath{\mathbbm{Q}}}
+\newcommand{\R}{\ensuremath{\mathbbm{R}}}
+\newcommand{\C}{\ensuremath{\mathbbm{C}}}
+% Här hittar jag på nya kommandon för att beteckna mängden av de
+% naturliga talen, heltalen, de rationella, de reella och de
+% komplexa. Vill man ha en annan font kan man i stället använda
+% \mathbb{N} och så vidare, men måste då inkludera följande rad:
+
+\usepackage{amssymb}
+
+\newcommand{\rd}{\ensuremath{\mathrm{d}}}
+\newcommand{\id}{\ensuremath{\,\rd}}
+% \rd står för rakt d, \id står för integral-d. Anledningen är att man
+% ska kunna skilja på d som en variabel (diameter, avstånd) och d som
+% en operator. I derivator och integraler ska d:et stå upprätt, och i
+% integraler också med ett litet mellanrum mellan d och föregående
+% uttryck.
+
+\setlength\parindent{0pt}
+%Tar bort intendering vid ny paragraf
+
+\usepackage[backend=bibtex,
+style=numeric
+%style=alphabetic
+%style=reading
+]{biblatex}
+\addbibresource{referenser}
+% Möjlighet att skapa refernslista, med hjälp av BibTex-formatet.
+
+\usepackage{rotating}
+\usepackage[yyyymmdd]{datetime}
+\renewcommand{\dateseparator}{-}
+\usepackage[absolute]{textpos}
+
+
+
+\begin{document}
